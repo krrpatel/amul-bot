@@ -22,11 +22,14 @@ cd amul-bot
 
 ---
 
-### Step 2: Run auto setup script
+### Step 2: 
 
 ```bash
-chmod +x setup_amul_bot.sh
-./setup_amul_bot.sh
+chmod +x packages.sh
+./packages.sh
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
 This will:
@@ -42,7 +45,7 @@ This will:
 ### Start Main Bot
 
 ```bash
-screen -S amul_app
+screen -S amulapp
 source .venv/bin/activate
 python bot.py
 ```
@@ -55,7 +58,7 @@ CTRL + A + D
 ### Start Notification Service
 
 ```bash
-screen -S amul_notifier
+screen -S amulnotifier
 source .venv/bin/activate
 python notification_checker.py
 ```
@@ -69,14 +72,14 @@ CTRL + A + D
 
 Resume:
 ```bash
-screen -r amul_app
-screen -r amul_notifier
+screen -r amulapp
+screen -r amulnotifier
 ```
 
 Stop:
 ```bash
-screen -XS amul_app quit
-screen -XS amul_notifier quit
+screen -XS amulapp quit
+screen -XS amulnotifier quit
 ```
 
 ---
