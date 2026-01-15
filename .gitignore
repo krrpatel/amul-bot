@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Environment Variables
+.env
+
+# Logs
+logs/
+*.log
+
+# User Data / Runtime Files
+user_data.json
+
+# Cache & Temp
+.cache/
+.tmp/
+*.tmp
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+
+# Backup files
+backup.py
+*.bak
