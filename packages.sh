@@ -18,13 +18,36 @@ docker-ce-rootless-extras \
 docker-compose-plugin \
 docker-model-plugin \
 git \
-google-chrome-stable \
 nodejs \
 python3 \
 python3-dev \
 python3-pip \
 python3-venv \
 xvfb \
-yarn
+yarn \
+wget \
+gnupg
+
+# -------------------------------
+# Install Google Chrome (your way)
+# -------------------------------
+echo "Installing Google Chrome..."
+
+wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
+
+# -------------------------------
+# Verify installation
+# -------------------------------
+echo "Checking Chrome path..."
+
+CHROME_PATH=$(which google-chrome || true)
+
+if [ "$CHROME_PATH" = "/usr/bin/google-chrome" ]; then
+    echo "Chrome installed correctly at $CHROME_PATH ✅"
+else
+    echo "Chrome not found at expected path ❌"
+    echo "Found at: $CHROME_PATH"
+fi
 
 echo "Installation complete ✅"
